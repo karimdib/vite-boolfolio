@@ -33,10 +33,15 @@ export default {
                 <div class="col-3" v-for="project in projects">
                     <p>{{ project.name }}</p>
                     <p>{{ project.description }}</p>
+                    <p class="type">{{ project.type.name }}</p>
                 </div>
             </div>
         </div>
     </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.type {
+    background-color: green;
+}
+</style>
