@@ -13,15 +13,13 @@ export default {
             axios
                 .get("http://127.0.0.1:8000/api/projects")
                 .then((reply) => {
-                    console.log(reply.data.projects)
                     this.projects = reply.data.projects
-                    console.log(this.projects)
                 })
         },
     },
     created() {
         this.callApi()
-    },
+    }
 }
 </script>
 
@@ -34,6 +32,8 @@ export default {
                     <p>{{ project.name }}</p>
                     <p>{{ project.description }}</p>
                     <p class="type">{{ project.type.name }}</p>
+                    <router-link :to="{ name: 'show', params: { id: project.id } }">Vedi il progetto</router-link>
+
                 </div>
             </div>
         </div>

@@ -1,13 +1,9 @@
 <script>
-import Project from './components/Projects.vue';
-import axios from 'axios';
-import { store } from '/store.js';
+
 export default {
-  components: {
-    Project,
-  },
   data() {
     return {
+      title: 'Vue + Laravel'
     }
   }
 }
@@ -15,8 +11,8 @@ export default {
 
 <template>
   <div class="container">
-    <h1>Vue+ Laravel</h1>
-    <Project />
+    <h1>{{ title }}</h1>
+    <router-view></router-view>
   </div>
 </template>
 
