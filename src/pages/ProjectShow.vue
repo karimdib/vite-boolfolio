@@ -1,9 +1,11 @@
 <template>
     <div>
-        <p>ciao sono una prova mi chiamo show</p>
-        <p>{{ project.name }}</p>
-        <p>{{ project.description }}</p>
-        <p class="type">{{ project.type.name }}</p>
+        <div>
+            <h2>ciao sono una prova mi chiamo show</h2>
+            <p>name: {{ project.name }}</p>
+            <p> description: {{ project.description }}</p>
+            <p class="type"> type: {{ project.type?.name }}</p>
+        </div>
     </div>
 </template>
 
@@ -13,7 +15,7 @@ export default {
     data() {
         return {
             URL: "http://127.0.0.1:8000/api/projects/",
-
+            project: [],
         }
     },
     methods: {
@@ -34,4 +36,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.type {
+    background-color: green;
+}
+</style>

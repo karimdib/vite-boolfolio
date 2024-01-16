@@ -1,6 +1,9 @@
 <script>
-
+import Header from './pages/Header.vue';
 export default {
+  components: {
+    Header,
+  },
   data() {
     return {
       title: 'Vue + Laravel'
@@ -12,6 +15,7 @@ export default {
 <template>
   <div class="container">
     <h1>{{ title }}</h1>
+    <Header />
     <router-view></router-view>
   </div>
 </template>
