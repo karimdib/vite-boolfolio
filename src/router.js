@@ -12,7 +12,7 @@ const router = createRouter({
             component: Project
         },
         {
-            path: '/show:id',
+            path: '/show:slug',
             name: 'show',
             component: ProjectShow
         },

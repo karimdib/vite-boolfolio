@@ -4,6 +4,7 @@
             <h2>ciao sono una prova mi chiamo show</h2>
             <p>name: {{ project.name }}</p>
             <p> description: {{ project.description }}</p>
+            <p> slug: {{ project.slug }}</p>
             <p class="type"> type: {{ project.type?.name }}</p>
         </div>
     </div>
@@ -21,7 +22,7 @@ export default {
     methods: {
         projectShow() {
             axios
-                .get(`${this.URL}${this.$route.params.id}`)
+                .get(`${this.URL}${this.$route.params.slug}`)
                 .then((reply) => {
                     console.log(reply)
                     this.project = reply.data.project

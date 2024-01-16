@@ -14,6 +14,7 @@ export default {
                 .get("http://127.0.0.1:8000/api/projects")
                 .then((reply) => {
                     this.projects = reply.data.projects
+                    console.log(this.projects)
                 })
         },
     },
@@ -32,7 +33,7 @@ export default {
                     <p>{{ project.name }}</p>
                     <p>{{ project.description }}</p>
                     <p class="type">{{ project.type.name }}</p>
-                    <router-link :to="{ name: 'show', params: { id: project.id } }">Vedi il progetto</router-link>
+                    <router-link :to="{ name: 'show', params: { slug: project.slug } }">Vedi il progetto</router-link>
 
                 </div>
             </div>
