@@ -27,16 +27,19 @@ export default {
 <template>
     <div>
         <div class="container">
-            <h2>ciao sono la pagina projects</h2>
-            <div class="row">
-                <div class="col-3" v-for="project in projects">
-                    <p>{{ project.name }}</p>
-                    <p>{{ project.description }}</p>
-                    <p class="type">{{ project.type.name }}</p>
-                    <router-link :to="{ name: 'show', params: { slug: project.slug } }">Vedi il progetto</router-link>
+            <section>
+                <h2 class="mb-3">ciao sono la pagina projects</h2>
+                <div class="row">
+                    <div class="col-3 card p-3 " v-for="project in projects">
+                        <p>{{ project.name }}</p>
+                        <p>{{ project.description }}</p>
+                        <p class="badge text-success">{{ project.type.name }}</p>
+                        <router-link class="badge " :to="{ name: 'show', params: { slug: project.slug } }">Vedi il
+                            progetto</router-link>
 
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
     </div>
 </template>

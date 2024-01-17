@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <ul class="">
-            <li>+0103323213</li>
-            <li>vue@gmail.com</li>
-            <li>+39 3323003255</li>
+    <div class="p-4">
+        <ul class="d-flex ">
+            <li class="px-3">+0103323213</li>
+            <li class="px-3">vue@gmail.com</li>
+            <li class=" px-3">+39 3323003255</li>
         </ul>
     </div>
 </template>

@@ -2,10 +2,13 @@
     <div>
         <div>
             <h2>ciao sono una prova mi chiamo show</h2>
-            <p>name: {{ project.name }}</p>
+            <p class="">name: {{ project.name }}</p>
             <p> description: {{ project.description }}</p>
             <p> slug: {{ project.slug }}</p>
-            <p class="type"> type: {{ project.type?.name }}</p>
+            <div class="d-flex" v-for="(tecnology, i) in project.tecnologies">
+                <p class="badge text-info">tecnology: {{ tecnology?.name }}</p>
+            </div>
+            <p class="badge text-success"> type: {{ project.type?.name }}</p>
         </div>
     </div>
 </template>
@@ -27,18 +30,16 @@ export default {
                     console.log(reply)
                     this.project = reply.data.project
                     console.log(this.project)
+                    console.log(this.project.tecnologies.name)
                 })
         }
     },
     created() {
-        this.projectShow()
+        this.projectShow(),
+            this.tecnology
     }
 
 }
 </script>
 
-<style lang="scss" scoped>
-.type {
-    background-color: green;
-}
-</style>
+<style lang="scss" scoped></style>
